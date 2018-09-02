@@ -16,6 +16,20 @@ Start the container.
 docker run -ti --rm deangerber/minimal-java
 ~~~
 
+### Single layer instructions
+
+Run the container so that it can be used by the next instruction.
+
+~~~ bash
+docker run -t deangerber/minimal-java /bin/true
+~~~
+
+Export and re-import the container to only have one layer.
+
+~~~ bash
+docker export `docker ps -q -n=1` | docker import --change "ENV JAVA_HOME /opt/jdk" --change "ENV PATH ${PATH}:${JAVA_HOME}/bin" - deangerber/minimal-java:stripped
+~~~
+
 ## References
 
 * [Docker](https://www.docker.com)
