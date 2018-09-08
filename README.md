@@ -2,6 +2,12 @@
 
 Setup a minimal Java image based on the alpine linux docker image.
 
+
+## Versions used
+
+* Docker for Mac - 18.06.1-ce
+* Java - 10.0.2
+
 ## Instructions
 
 Build the image.
